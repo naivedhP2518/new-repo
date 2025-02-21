@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Forgot Password</title>
+    <link rel="stylesheet" type="text/css" href="forgot.css">
+</head>
+<body>
+<div class="ring">
+  <i style="--clr:#00ff0a;"></i>
+  <i style="--clr:#ff0057;"></i>
+  <i style="--clr:#fffd44;"></i>
+  <div class="forgot-password">
+    <h2>Forgot Password</h2>
+    
+    <div class="inputBx">
+      <input type="email" id="email" placeholder="Enter Email">
+      <input type="submit" value="Reset via Email" onclick="resetPassword('email')">
+    </div>
+    
+    <p style="color: #aaa;">OR</p>
+    
+    <div class="inputBx">
+      <input type="tel" id="mobile" placeholder="Enter Mobile Number">
+      <input type="submit" value="Reset via Mobile" onclick="resetPassword('mobile')">
+    </div>
+
+    <div class="links">
+      <a href="index.html">Back to Login</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  function resetPassword(type) {
+    var email = document.getElementById("email").value;
+    var mobile = document.getElementById("mobile").value;
+
+    if (type === 'email' && email) {
+      alert("A password reset link has been sent to " + email);
+    } else if (type === 'mobile' && mobile) {
+      alert("A password reset link has been sent to your mobile number: " + mobile);
+    } else {
+      alert("Please enter a valid " + type);
+    }
+  }
+</script>
+</body>
+</html>
